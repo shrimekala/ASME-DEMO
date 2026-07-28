@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UH-ASME</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-primary-subtle" data-bs-theme="dark">
+    <!--NAVBAR CODE-->
+    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="./index.html">
+          <!-- You will need to replace this with the actual path to your logo file -->
+          <img
+            src="./LOGOS-ASME/2026-2027_ASME-UH_Official_Logo_White-navbar.png"
+            alt="UH-ASME Logo"
+            width="60"
+            class="d-inline-block align-text-top me-2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">UH-ASME</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./join-us.html">Join Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-team.html">Our Team</a>
+              </li>
+            </ul>
+            <a href="./login-signup.html" class="btn btn-danger mt-3 mt-md-0"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--CAROUSEL CODE-->
+    <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class=""
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          class="active"
+          aria-current="true"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          class=""
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <!-- <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            ></rect>
+          </svg> -->
+          <img
+            src="./images/f22 image.jpg"
+            alt="UH ASME F22"
+            class="d-block w-100"
+          />
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Join Us.</h1>
+              <p class="opacity-75">learn how to join ASME!</p>
+              <p>
+                <a class="btn btn-lg btn-danger" href="join-us.html"
+                  >Sign up today</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <!-- <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            ></rect>
+          </svg> -->
+          <img
+            src="./images/f22 image.jpg"
+            alt="UH ASME F22"
+            class="d-block w-100"
+          />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Learn more about our organization.</p>
+              <p>
+                <a class="btn btn-lg btn-light" href="about.html">Learn more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!-- <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            ></rect>
+          </svg> -->
+          <img
+            src="./images/f22 image.jpg"
+            alt="UH ASME F22"
+            class="d-block w-100"
+          />
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>One more for good measure.</h1>
+              <p>
+                Some representative placeholder content for the third slide of
+                this carousel.
+              </p>
+              <p>
+                <a class="btn btn-lg btn-danger" href="./gallery.html"
+                  >Browse Gallery</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--LEFT ALIGNED HOME DESCRIPTION CODE-->
+    <div class="container-fluid px-5 py-5 bg-dark" data-bs-theme="dark">
+      <div class="row flex-lg-row-reverse align-items-center g-4 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img
+            src="./images/f1 image.jpg"
+            class="d-block mx-lg-auto img-fluid"
+            alt="..."
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-lg-6 text-white">
+          <h1 class="display-5 fw-bold lh-1 mb-3">
+            Welcome to the American Society of Mechanical Engineers at the
+            <span style="color: red">University of Houston</span>
+          </h1>
+          <p class="lead text-white">
+            The American Society of Mechanical Engineers (ASME) at the
+            University of Houston is a professional student organization that
+            aims to lead engineering students to success in all aspects of the
+            engineering disciplines. It is our conscious intention to promote
+            diversity, equity, and inclusion in all of our programs, events,
+            member outreach, learning and development opportunities,
+            scholarships, and communications.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="./about.html" class="btn btn-danger btn-lg px-4 me-md-2"
+              >Learn More</a
+            >
+            <a href="./join-us.html" class="btn btn-outline-light btn-lg px-4"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--PILLARS CODE-->
+    <div class="container-fluid py-5 bg-primary-subtle" data-bs-theme="dark">
+      <div class="container">
+        <div class="pb-md-4 mx-auto text-center">
+          <h2 class="display-5 fw-bold text-white">
+            ASME-<span style="color: red">UH</span> Pillars
+          </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-11">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="card h-100 text-bg-danger">
+                  <div
+                    class="card-body p-4 d-flex flex-column justify-content-center"
+                  >
+                    <h4 class="card-title">Academic & Professional Growth</h4>
+                    <p class="card-text">
+                      Gain an edge with workshops, company info sessions, and
+                      networking events.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 bg-primary-subtle">
+                  <div
+                    class="card-body p-4 d-flex flex-column justify-content-center"
+                  >
+                    <h4 class="card-title">Innovation & Teamwork</h4>
+                    <p class="card-text">
+                      Apply your skills in hands-on projects and design
+                      competitions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 bg-primary-subtle">
+                  <div
+                    class="card-body p-4 d-flex flex-column justify-content-center"
+                  >
+                    <h4 class="card-title">Outreach & Community Service</h4>
+                    <p class="card-text">
+                      Give back to the community and inspire the next generation
+                      of engineers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 text-bg-danger">
+                  <div
+                    class="card-body p-4 d-flex flex-column justify-content-center"
+                  >
+                    <h4 class="card-title">Supportive Community</h4>
+                    <p class="card-text">
+                      Join a network of peers and mentors in a welcoming
+                      environment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--NEWSLETTER CAROUSEL-->
+    <div class="container-fluid py-5 text-bg-danger">
+      <div class="container">
+        <h2 class="fw-bold mb-4 text-center">News</h2>
+        <div
+          id="newsletterCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#newsletterCarousel"
+              data-bs-slide-to="0"
+              class=""
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#newsletterCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              class=""
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#newsletterCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              class="active"
+              aria-current="true"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="carousel-item active">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#newsletterCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#newsletterCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER CODE-->
+    <div class="container-fluid">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link px-2 text-body-secondary"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://discord.gg/wUkkzKJRAm"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              >Discord</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="./our-team.html" class="nav-link px-2 text-body-secondary"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 ASME-UH</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

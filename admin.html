@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body
+    class="bg-primary-subtle d-flex flex-column min-vh-100"
+    data-bs-theme="dark"
+  >
+    <!--NAVBAR CODE-->
+    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="./index.html">
+          <!-- You will need to replace this with the actual path to your logo file -->
+          <img
+            src="./LOGOS-ASME/2026-2027_ASME-UH_Official_Logo_White-navbar.png"
+            alt="UH-ASME Logo"
+            width="60"
+            class="d-inline-block align-text-top me-2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">UH-ASME</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./join-us.html">Join Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-team.html">Our Team</a>
+              </li>
+            </ul>
+            <a href="./login-signup.html" class="btn btn-danger mt-3 mt-md-0"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- This content is hidden until the admin logs in -->
+    <div id="adminPanel">
+      <!-- HERO SECTION -->
+      <div class="container-fluid text-center text-bg-danger py-5 mb-5">
+        <h1 class="display-4 fw-bold text-white">Admin Panel</h1>
+        <p class="fs-5 text-white-50">Member Point Management</p>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <main class="flex-grow-1 py-5">
+        <div class="container">
+          <h2 class="mb-4">Member List</h2>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Points</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="rosterTableBody">
+                <!-- Member data will be inserted here by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <p class="text-muted mt-3">
+            Note: This is a demo using a mock roster stored in the browser. A
+            full system would list all members from a database.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <!--FOOTER CODE-->
+    <div class="container-fluid">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link px-2 text-body-secondary"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://discord.gg/wUkkzKJRAm"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              >Discord</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="./our-team.html" class="nav-link px-2 text-body-secondary"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 ASME-UH</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 1. Check if we already have a roster saved in memory
+      let members = JSON.parse(localStorage.getItem("memberRoster"));
+
+      // 2. If no roster exists, create a fake one for the demo
+      if (!members) {
+        members = [
+          {
+            id: 0,
+            name: "Alice Engineer",
+            email: "alice@example.com",
+            points: 150,
+          },
+          { id: 1, name: "Bob Builder", email: "bob@example.com", points: 85 },
+          {
+            id: 2,
+            name: "Charlie Dynamics",
+            email: "charlie@example.com",
+            points: 20,
+          },
+        ];
+        localStorage.setItem("memberRoster", JSON.stringify(members));
+      }
+      const tableBody = document.getElementById("rosterTableBody");
+
+      // Function to draw the table
+      function renderTable() {
+        tableBody.innerHTML = ""; // Clear the table first
+
+        members.forEach((member, index) => {
+          // Create a new row for each member
+          const row = document.createElement("tr");
+
+          row.innerHTML = `
+            <td>${member.name}</td>
+            <td>${member.email}</td>
+            <td>
+              <!-- Input field to display and edit points for each member -->
+              <input type="number" class="form-control form-control-sm" id="points-input-${index}" value="${member.points}">
+            </td>
+            <td>
+                <!-- Update button that calls the updatePoints function with the member's index -->
+                <button class="btn btn-sm btn-danger" onclick="updatePoints(${index})">Update</button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Function to handle the "Update" button clicks
+      window.updatePoints = function (memberIndex) {
+        // Find the specific input field for the member using its unique ID
+        const pointsInput = document.getElementById(
+          `points-input-${memberIndex}`,
+        );
+        // Get the new value from the input field and convert it to a number
+        const newPoints = parseInt(pointsInput.value, 10);
+
+        // Check if the input is a valid number. If not, show an alert and stop.
+        if (isNaN(newPoints)) {
+          alert("Please enter a valid number for points.");
+          return;
+        }
+
+        // Update the points for the specific member in our 'members' array
+        members[memberIndex].points = newPoints;
+
+        // Save the entire updated 'members' array back to the browser's local storage
+        localStorage.setItem("memberRoster", JSON.stringify(members));
+
+        // Redraw the table to reflect the changes immediately
+        renderTable();
+      };
+
+      // Draw the table when the page loads
+      renderTable();
+    </script>
+  </body>
+</html>

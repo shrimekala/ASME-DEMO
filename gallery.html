@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project & Event Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-primary-subtle" data-bs-theme="dark">
+    <!--NAVBAR CODE-->
+    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="./index.html">
+          <!-- You will need to replace this with the actual path to your logo file -->
+          <img
+            src="./LOGOS-ASME/2026-2027_ASME-UH_Official_Logo_White-navbar.png"
+            alt="UH-ASME Logo"
+            width="60"
+            class="d-inline-block align-text-top me-2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">UH-ASME</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./join-us.html">Join Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-team.html">Our Team</a>
+              </li>
+            </ul>
+            <a href="./login-signup.html" class="btn btn-danger mt-3 mt-md-0"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="container-fluid text-center bg-dark py-5 mb-5">
+      <h1 class="display-4 fw-bold text-white">Project & Event Gallery</h1>
+      <p class="fs-5 text-white-50">
+        A showcase of our members' hard work, innovation, and community spirit.
+      </p>
+    </div>
+
+    <!--NEWSLETTER CAROUSEL-->
+    <div class="container-fluid pb-5 text-bg-primary-subtle">
+      <div class="container">
+        <h2 class="fw-bold mb-4 text-center">Upcoming Events and News</h2>
+        <div
+          id="galleryNewsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#galleryNewsCarousel"
+              data-bs-slide-to="0"
+              class=""
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#galleryNewsCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              class=""
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#galleryNewsCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              class="active"
+              aria-current="true"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="carousel-item active">
+              <img
+                src="./images/Screenshot 2026-07-17 171543.png"
+                alt="UH ASME F22"
+                class="d-block w-100"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#galleryNewsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#galleryNewsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURRENT PROJECTS SECTION -->
+    <div class="container-fluid py-5 text-bg-danger">
+      <div class="container">
+        <div class="pb-md-4 mx-auto text-center">
+          <h2 class="display-5 fw-bold">Current Projects</h2>
+          <p class="fs-5 text-white-75">
+            See what our teams are building right now.
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Project Card -->
+          <div class="col">
+            <div class="card h-100 bg-primary-subtle">
+              <img
+                src="https://via.placeholder.com/700x400?text=Robotic+Arm"
+                class="card-img-top"
+                alt="Project Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Autonomous Robotic Arm</h5>
+                <p class="card-text">
+                  A team of students is designing and building a robotic arm
+                  capable of sorting objects by color and size using computer
+                  vision.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Status: In Progress</small>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card -->
+          <div class="col">
+            <div class="card h-100 bg-primary-subtle">
+              <img
+                src="https://via.placeholder.com/700x400?text=Go-Kart"
+                class="card-img-top"
+                alt="Project Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Go-Kart Design</h5>
+                <p class="card-text">
+                  This project focuses on designing, simulating, and fabricating
+                  a lightweight, high-performance go-kart for a collegiate
+                  competition.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Status: Design Phase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAST HIGHLIGHTS SECTION -->
+    <div class="container py-5">
+      <!-- Past Projects -->
+      <div class="pb-md-4 mx-auto text-center">
+        <h2 class="display-5 fw-bold">Past Project Showcase</h2>
+        <p class="fs-5 text-body-secondary">
+          A look back at some of our successful projects.
+        </p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- Past Project Card -->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/700x400?text=3D+Printed+Drone"
+              class="card-img-top"
+              alt="Project Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">To be added...</h5>
+              <p class="card-text">To be added...</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Completed: Spring 2026</small>
+            </div>
+          </div>
+        </div>
+        <!-- Past Project Card -->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/700x400?text=CAD+Competition"
+              class="card-img-top"
+              alt="Project Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">To be added...</h5>
+              <p class="card-text">To be added...</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Completed: Fall 2025</small>
+            </div>
+          </div>
+        </div>
+        <!-- Past Project Card -->
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/700x400?text=Water+Rocket"
+              class="card-img-top"
+              alt="Project Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">To be added...</h5>
+              <p class="card-text">To be added...</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Completed: Fall 2025</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past Events Gallery -->
+      <div class="pb-md-4 mx-auto text-center border-top pt-5">
+        <h2 class="display-5 fw-bold">Past Event Moments</h2>
+        <p class="fs-5 text-body-secondary">
+          Snapshots from our meetings, workshops, and socials.
+        </p>
+      </div>
+      <div class="row row-cols-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Event+Photo"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Workshop"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Social+Event"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Info+Session"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Team+Building"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Competition"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=Networking"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://via.placeholder.com/500x500?text=General+Meeting"
+            class="img-fluid rounded shadow-sm"
+            alt="Event gallery image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER CODE-->
+    <div class="container-fluid">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link px-2 text-body-secondary"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://discord.gg/wUkkzKJRAm"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              >Discord</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="./our-team.html" class="nav-link px-2 text-body-secondary"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 ASME-UH</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

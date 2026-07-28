@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-primary-subtle" data-bs-theme="dark">
+    <!--NAVBAR CODE-->
+    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="./index.html">
+          <!-- You will need to replace this with the actual path to your logo file -->
+          <img
+            src="./LOGOS-ASME/2026-2027_ASME-UH_Official_Logo_White-navbar.png"
+            alt="UH-ASME Logo"
+            width="60"
+            class="d-inline-block align-text-top me-2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">UH-ASME</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./join-us.html">Join Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-team.html">Our Team</a>
+              </li>
+            </ul>
+            <a href="./login-signup.html" class="btn btn-danger mt-3 mt-md-0"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="container-fluid text-center text-bg-danger py-5 mb-5">
+      <h1 class="display-4 fw-bold text-white">Meet the Executive Board</h1>
+      <p class="fs-5 text-white-50">
+        The dedicated student leaders of ASME at UH.
+      </p>
+    </div>
+
+    <!-- TEAM CARDS SECTION -->
+    <div class="container bg-dark py-5 rounded-3">
+      <!-- Core Officers -->
+      <div class="text-center my-5">
+        <h2 class="display-6 fw-bold">Core Officers</h2>
+      </div>
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"
+      >
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <!-- Replace with officer's image. 1:1 aspect ratio (e.g., 500x500) works best. -->
+            <img
+              src="./images/rocket image.jpg"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">President</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:president@uh-asme.org" class="card-link"
+                >president@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img
+              src="https://via.placeholder.com/500"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">Vice President</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:vp@uh-asme.org" class="card-link"
+                >vp@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img
+              src="https://via.placeholder.com/500"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">Treasurer</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:treasurer@uh-asme.org" class="card-link"
+                >treasurer@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Add more officer cards here by copying the <div class="col">...</div> block -->
+      </div>
+
+      <!-- Non-Core Officers / Chairs -->
+      <div class="text-center my-5 pt-5 border-top">
+        <h2 class="display-6 fw-bold">Committee Chairs</h2>
+        <p class="lead text-body-secondary">
+          The leaders driving our projects and initiatives.
+        </p>
+      </div>
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"
+      >
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img
+              src="https://via.placeholder.com/500"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">Webmaster</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:webmaster@uh-asme.org" class="card-link"
+                >webmaster@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img
+              src="https://via.placeholder.com/500"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">Marketing Chair</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:marketing@uh-asme.org" class="card-link"
+                >marketing@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Officer Card Template -->
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img
+              src="https://via.placeholder.com/500"
+              class="card-img-top"
+              alt="Officer Name"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Officer Name</h5>
+              <h6 class="card-subtitle mb-2 text-danger">Projects Chair</h6>
+              <p class="card-text">
+                A brief, one-sentence bio about the officer, their major, or
+                their goals for the club.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="mailto:projects@uh-asme.org" class="card-link"
+                >projects@uh-asme.org</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER CODE-->
+    <div class="container-fluid">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link px-2 text-body-secondary"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://discord.gg/wUkkzKJRAm"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              >Discord</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="./our-team.html" class="nav-link px-2 text-body-secondary"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 ASME-UH</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

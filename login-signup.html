@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Signup page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body
+    class="bg-primary-subtle d-flex flex-column min-vh-100"
+    data-bs-theme="dark"
+  >
+    <!--NAVBAR CODE-->
+    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="./index.html">
+          <!-- You will need to replace this with the actual path to your logo file -->
+          <img
+            src="./LOGOS-ASME/2026-2027_ASME-UH_Official_Logo_White-navbar.png"
+            alt="UH-ASME Logo"
+            width="60"
+            class="d-inline-block align-text-top me-2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">UH-ASME</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./join-us.html">Join Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./our-team.html">Our Team</a>
+              </li>
+            </ul>
+            <a href="./login-signup.html" class="btn btn-danger mt-3 mt-md-0"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content area that grows and centers the form -->
+    <main class="flex-grow-1 d-flex align-items-center py-5">
+      <div class="container">
+        <div class="card mx-auto shadow-sm bg-dark" style="max-width: 420px">
+          <div class="card-body p-5">
+            <!-- LOGIN FORM -->
+            <div id="loginView">
+              <h3 class="card-title text-center mb-4 text-white">
+                Member Login
+              </h3>
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="loginPassword"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-danger w-100 mb-3">
+                  Log In
+                </button>
+              </form>
+              <p class="text-center text-muted mb-0">
+                Don't have an account?
+                <a
+                  href="#"
+                  id="showSignup"
+                  class="text-decoration-none text-danger"
+                  >Sign up</a
+                >
+              </p>
+            </div>
+
+            <!-- SIGN UP FORM (Hidden by default using 'd-none') -->
+            <div id="signupView" class="d-none">
+              <h3 class="card-title text-center mb-4 text-white">
+                Create Account
+              </h3>
+              <form id="signupForm">
+                <div class="mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    id="signupName"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    id="signupEmail"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="signupPassword"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-danger w-100 mb-3">
+                  Sign Up
+                </button>
+              </form>
+              <p class="text-center text-muted mb-0">
+                Already have an account?
+                <a
+                  href="#"
+                  id="showLogin"
+                  class="text-decoration-none text-danger"
+                  >Log in</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--FOOTER CODE-->
+    <div class="container-fluid">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link px-2 text-body-secondary"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link px-2 text-body-secondary"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://discord.gg/wUkkzKJRAm"
+              target="_blank"
+              class="nav-link px-2 text-body-secondary"
+              >Discord</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="./our-team.html" class="nav-link px-2 text-body-secondary"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2026 ASME-UH</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Toggle & Auth Logic Script -->
+    <script>
+      const loginView = document.getElementById("loginView");
+      const signupView = document.getElementById("signupView");
+
+      // View togglers (Unchanged)
+      document.getElementById("showSignup").addEventListener("click", (e) => {
+        e.preventDefault();
+        loginView.classList.add("d-none");
+        signupView.classList.remove("d-none");
+      });
+      document.getElementById("showLogin").addEventListener("click", (e) => {
+        e.preventDefault();
+        signupView.classList.add("d-none");
+        loginView.classList.remove("d-none");
+      });
+
+      // 1. Get the master roster, or create an empty list if it's the first time
+      function getRoster() {
+        const saved = localStorage.getItem("memberRoster");
+        return saved ? JSON.parse(saved) : [];
+      }
+
+      // SIGN UP LOGIC
+      document.getElementById("signupForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const roster = getRoster();
+
+        const newUser = {
+          name: document.getElementById("signupName").value,
+          email: document.getElementById("signupEmail").value,
+          password: document.getElementById("signupPassword").value,
+          points: 50, // starting points
+        };
+
+        // Add new user to the list and save it
+        roster.push(newUser);
+        localStorage.setItem("memberRoster", JSON.stringify(roster));
+
+        // Set the active session and go to dashboard
+        localStorage.setItem("activeUserEmail", newUser.email);
+        window.location.href = "dashboard.html";
+      });
+
+      // LOGIN LOGIC
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const roster = getRoster();
+        const typedEmail = document.getElementById("loginEmail").value;
+        const typedPassword = document.getElementById("loginPassword").value;
+
+        // Search the roster for a matching user
+        const foundUser = roster.find((user) => user.email === typedEmail);
+
+        if (foundUser && foundUser.password === typedPassword) {
+          // Success! Set the session and let them in
+          localStorage.setItem("activeUserEmail", typedEmail);
+          window.location.href = "dashboard.html";
+        } else {
+          alert("Incorrect email or password.");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+#myCarousel .carousel-item img {
+  max-height: 65vh; /* Adjust this value as needed */
+  object-fit: cover; /*change cover to contain if you want to maintain aspect ratio */
+  object-position: center;
+}
+
+#newsletterCarousel .carousel-item img {
+  max-height: 65vh; /* Adjust this value as needed */
+  object-fit: contain; /*change contain to cover if you want to fill the entire carousel area*/
+  object-position: center;
+}
+
+/* Styles for the carousel on the gallery page */
+#galleryNewsCarousel .carousel-item img {
+  max-height: 45vh; /* A smaller height for the gallery page carousel */
+  object-fit: contain; /*change contain to cover if you want to fill the entire carousel area*/
+  object-position: center;
+}
