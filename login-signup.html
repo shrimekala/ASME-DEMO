@@ -11,6 +11,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Load supabase javscript client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body
     class="bg-primary-subtle d-flex flex-column min-vh-100"
@@ -91,7 +94,7 @@
               </h3>
               <form id="loginForm">
                 <div class="mb-3">
-                  <label class="form-label">Email address</label>
+                  <label class="form-label">UH Email address</label>
                   <input
                     type="email"
                     id="loginEmail"
@@ -108,9 +111,21 @@
                     required
                   />
                 </div>
-                <button type="submit" class="btn btn-danger w-100 mb-3">
+                <button
+                  type="submit"
+                  id="loginBtn"
+                  class="btn btn-danger w-100 mb-3"
+                >
                   Log In
                 </button>
+                <!-- Error Message Div (hidden by default) -->
+                <div
+                  id="errorMessage"
+                  class="alert alert-danger d-none"
+                  role="alert"
+                >
+                  <!-- Error messages will be inserted here by auth.js -->
+                </div>
               </form>
               <p class="text-center text-muted mb-0">
                 Don't have an account?
@@ -139,7 +154,7 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Email address</label>
+                  <label class="form-label">UH Email address</label>
                   <input
                     type="email"
                     id="signupEmail"
@@ -215,6 +230,8 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!-- Supabase Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Toggle & Auth Logic Script -->
     <script>
       const loginView = document.getElementById("loginView");
@@ -231,52 +248,9 @@
         signupView.classList.add("d-none");
         loginView.classList.remove("d-none");
       });
-
-      // 1. Get the master roster, or create an empty list if it's the first time
-      function getRoster() {
-        const saved = localStorage.getItem("memberRoster");
-        return saved ? JSON.parse(saved) : [];
-      }
-
-      // SIGN UP LOGIC
-      document.getElementById("signupForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const roster = getRoster();
-
-        const newUser = {
-          name: document.getElementById("signupName").value,
-          email: document.getElementById("signupEmail").value,
-          password: document.getElementById("signupPassword").value,
-          points: 50, // starting points
-        };
-
-        // Add new user to the list and save it
-        roster.push(newUser);
-        localStorage.setItem("memberRoster", JSON.stringify(roster));
-
-        // Set the active session and go to dashboard
-        localStorage.setItem("activeUserEmail", newUser.email);
-        window.location.href = "dashboard.html";
-      });
-
-      // LOGIN LOGIC
-      document.getElementById("loginForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const roster = getRoster();
-        const typedEmail = document.getElementById("loginEmail").value;
-        const typedPassword = document.getElementById("loginPassword").value;
-
-        // Search the roster for a matching user
-        const foundUser = roster.find((user) => user.email === typedEmail);
-
-        if (foundUser && foundUser.password === typedPassword) {
-          // Success! Set the session and let them in
-          localStorage.setItem("activeUserEmail", typedEmail);
-          window.location.href = "dashboard.html";
-        } else {
-          alert("Incorrect email or password.");
-        }
-      });
     </script>
+
+    <!-- Auth Logic Script -->
+    <script src="auth.js"></script>
   </body>
 </html>

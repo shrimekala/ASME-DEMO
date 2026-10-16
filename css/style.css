@@ -16,3 +16,25 @@
   object-fit: contain; /*change contain to cover if you want to fill the entire carousel area*/
   object-position: center;
 }
+
+/* new style colors */
+.bg-cream {
+  background-color: #fffdd0;
+}
+
+.bg-uh-red {
+  background-color: #c8102e;
+}
+
+p {
+  font-family: "JetBrains Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow", sans-serif;
+}

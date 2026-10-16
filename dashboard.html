@@ -10,14 +10,19 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body
-    class="bg-primary-subtle d-flex flex-column min-vh-100"
-    data-bs-theme="dark"
-  >
+  <body class="bg-cream d-flex flex-column min-vh-100" data-bs-theme="light">
     <!--NAVBAR CODE-->
-    <nav class="navbar navbar-expand-md sticky-top bg-primary-subtle">
+    <nav class="navbar navbar-expand-md sticky-top bg-uh-red">
       <div class="container-fluid">
         <a class="navbar-brand me-auto" href="./index.html">
           <img
@@ -70,7 +75,7 @@
                 <a class="nav-link" href="./our-team.html">Our Team</a>
               </li>
             </ul>
-            <a href="#" id="logoutButton" class="btn btn-danger mt-3 mt-md-0"
+            <a href="#" id="logoutBtn" class="btn btn-danger mt-3 mt-md-0"
               >Logout</a
             >
           </div>
@@ -79,9 +84,9 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <div class="container-fluid text-center bg-dark py-5 mb-5">
-      <h1 class="display-4 fw-bold text-white">Member Dashboard</h1>
-      <p class="fs-5 text-white-50">
+    <div class="container-fluid text-center py-5 mb-5">
+      <h1 class="display-4 fw-bold text-body-emphasis">Member Dashboard</h1>
+      <p class="fs-5 text-body-secondary">
         Welcome back, <span id="memberName" class="text-danger"></span>!
       </p>
     </div>
@@ -90,12 +95,11 @@
     <main class="flex-grow-1 d-flex align-items-center py-5">
       <div class="container">
         <div
-          class="card mx-auto shadow-sm bg-dark text-white"
+          class="card mx-auto shadow-lg bg-cream border border-2 border-danger rounded-4"
           style="max-width: 600px"
         >
           <div class="card-body p-5 text-center">
             <h3 class="card-title mb-4">Your Member Information</h3>
-            <p class="lead">Name: <strong id="displayName"></strong></p>
             <p class="lead">Points: <strong id="displayPoints"></strong></p>
             <hr class="my-4 border-danger" />
             <p class="text-muted">
@@ -149,33 +153,10 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script>
-      // 1. The Bouncer: Who is logged in?
-      const activeEmail = localStorage.getItem("activeUserEmail");
-      let roster = JSON.parse(localStorage.getItem("memberRoster")) || [];
-
-      // Find the logged-in person's data in the array
-      let myProfile = roster.find((user) => user.email === activeEmail);
-
-      if (!activeEmail || !myProfile) {
-        window.location.href = "login-signup.html"; // Kick out if not logged in
-      } else {
-        // 2. Render the Data
-        // Populate the name in both the hero and the card
-        document.getElementById("memberName").innerText = myProfile.name;
-        document.getElementById("displayName").innerText = myProfile.name;
-        // Populate the points
-        document.getElementById("displayPoints").innerText = myProfile.points;
-      }
-
-      // 3. Handle Log Out
-      document
-        .getElementById("logoutButton")
-        .addEventListener("click", function (e) {
-          e.preventDefault(); // Prevent the link from navigating
-          localStorage.removeItem("activeUserEmail"); // Destroy the session
-          window.location.href = "login-signup.html"; // Go back to the login page
-        });
-    </script>
+    <!-- Supabase and auth.js scripts -->
+    <!-- Load Supabase CDN First -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Load your centralized logic -->
+    <script src="auth.js"></script>
   </body>
 </html>
