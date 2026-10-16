@@ -2,8 +2,12 @@
 // Replace these with your actual Project URL and Anon Key
 const supabaseUrl = "https://eupmijeyqsdiaetjbebt.supabase.co"; // Correct URL format
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG1pamV5cXNkaWFldGpiZWJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI4NTAzMDgsImV4cCI6MjAyODQyNjMwOH0.vL-a9z53Ua_2Jz2y3u4Y5m3I8tW0-M-s5T_aF2j5vFM"; // Replace with your actual anon key
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG1pamV5cXNkaWFldGpiZWJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5MDA0NTgsImV4cCI6MjEwMjQ3NjQ1OH0.sJ8IPcaREaF9ior1nRu-8sq97xmHrJNLxSZKgW3oxy8"; // Replace with your actual anon key
 const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+function getErrorMessage(error) {
+  return error instanceof Error ? error.message : String(error);
+}
 
 // 2. Grab DOM elements
 const loginForm = document.getElementById("loginForm");
@@ -19,10 +23,11 @@ if (loginForm) {
 
     // Reset UI states
     errorMessageDiv.classList.add("d-none");
+    errorMessageDiv.textContent = "";
     loginBtn.textContent = "Logging in...";
     loginBtn.disabled = true;
 
-    const email = emailInput.value;
+    const email = emailInput.value.trim();
     const password = passwordInput.value;
 
     try {
@@ -59,7 +64,7 @@ if (loginForm) {
       }
     } catch (error) {
       // Handle errors (e.g., wrong password, network issues)
-      errorMessageDiv.textContent = error.message;
+      errorMessageDiv.textContent = getErrorMessage(error);
       errorMessageDiv.classList.remove("d-none");
     } finally {
       // Reset button state regardless of success or failure
@@ -80,8 +85,8 @@ if (signupForm) {
     e.preventDefault();
 
     // Grab the values using the exact IDs from your HTML
-    const name = document.getElementById("signupName").value;
-    const email = document.getElementById("signupEmail").value;
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
     const password = document.getElementById("signupPassword").value;
 
     // --- FRONTEND EMAIL RESTRICTION CHECK ---
@@ -112,7 +117,9 @@ if (signupForm) {
       if (error) throw error;
 
       // Handle Success
-      alert("Account created successfully! Please log in.");
+      alert(
+        "Account created successfully. If email confirmation is enabled, check your inbox before logging in.",
+      );
 
       // Visually toggle back to the login view
       document.getElementById("signupView").classList.add("d-none");
@@ -121,7 +128,7 @@ if (signupForm) {
       // Clear the input fields
       signupForm.reset();
     } catch (error) {
-      alert("Signup failed: " + error.message);
+      alert("Signup failed: " + getErrorMessage(error));
     }
   });
 }
@@ -135,26 +142,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (displayPoints) {
     // 2. Fetch the current active session
-    const {
-      data: { session },
-      error: sessionError,
-    } =     await supabaseClient.auth.getSession();
+    let session;
+    try {
+      const {
+        data: sessionData,
+        error: sessionError,
+      } = await supabaseClient.auth.getSession();
+
+      if (sessionError) throw sessionError;
+      session = sessionData.session;
+    } catch (error) {
+      console.error("Error fetching the active session:", error);
+      window.location.href = "./login-signup.html";
+      return;
+    }
 
     // If no session exists, kick them back to login
-    if (!session || sessionError) {
+    if (!session) {
       window.location.href = "./login-signup.html";
       return;
     }
 
     // 3. Fetch the user's specific data from the profiles table
-    const { data: profileData, error: profileError } = await supabaseClient
-      .from("profiles")
-      .select("full_name, points, dues_paid, role")
-      .eq("id", session.user.id)
-      .single();
+    let profileData;
+    try {
+      const { data, error: profileError } = await supabaseClient
+        .from("profiles")
+        .select("full_name, points, dues_paid, role")
+        .eq("id", session.user.id)
+        .single();
 
-    if (profileError) {
-      console.error("Error fetching profile:", profileError);
+      if (profileError) throw profileError;
+      profileData = data;
+    } catch (error) {
+      console.error("Error fetching profile:", error);
       return;
     }
 
@@ -183,8 +204,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-      await supabaseClient.auth.signOut();
-      window.location.href = "./login-signup.html";
+      try {
+        const { error } = await supabaseClient.auth.signOut();
+        if (error) throw error;
+        window.location.href = "./login-signup.html";
+      } catch (error) {
+        console.error("Error signing out:", error);
+        alert("Log out failed: " + getErrorMessage(error));
+      }
     });
   }
 });
