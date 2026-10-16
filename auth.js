@@ -63,11 +63,10 @@ if (loginForm) {
         window.location.href = "./pre-dashboard.html";
       }
     } catch (error) {
-      // Handle errors (e.g., wrong password, network issues)
-      errorMessageDiv.textContent = getErrorMessage(error);
+      console.error("Login failed:", error);
+      errorMessageDiv.textContent = error.message || JSON.stringify(error);
       errorMessageDiv.classList.remove("d-none");
     } finally {
-      // Reset button state regardless of success or failure
       loginBtn.textContent = "Log In";
       loginBtn.disabled = false;
     }
@@ -144,10 +143,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2. Fetch the current active session
     let session;
     try {
-      const {
-        data: sessionData,
-        error: sessionError,
-      } = await supabaseClient.auth.getSession();
+      const { data: sessionData, error: sessionError } =
+        await supabaseClient.auth.getSession();
 
       if (sessionError) throw sessionError;
       session = sessionData.session;
