@@ -47,9 +47,15 @@ if (loginForm) {
         .from("profiles")
         .select("role, dues_paid") //
         .eq("id", userId)
-        .single();
+        .maybeSingle();
 
       if (profileError) throw profileError;
+
+      if (!profileData) {
+        throw new Error(
+          "Profile not found. Please contact an admin or complete signup.",
+        );
+      }
 
       // 6. Route the user based on their role and membership status
       if (
@@ -167,9 +173,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         .from("profiles")
         .select("full_name, points, dues_paid, role")
         .eq("id", session.user.id)
-        .single();
+        .maybeSingle();
 
       if (profileError) throw profileError;
+
+      if (!data) {
+        throw new Error("Dashboard profile data missing.");
+      }
+
       profileData = data;
     } catch (error) {
       console.error("Error fetching profile:", error);
